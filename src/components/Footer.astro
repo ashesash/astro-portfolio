@@ -8,20 +8,7 @@ const { author, socialLinks } = Astro.props;
 const year = new Date().getFullYear();
 ---
 
-<footer id="contact" class="relative mt-32 bg-primary pt-16 pb-8 text-white">
-    <!-- Wave shape that creates the overlap effect -->
-    <div class="absolute -top-16 left-0 right-0 h-16 overflow-hidden">
-        <svg 
-            viewBox="0 0 1200 120" 
-            preserveAspectRatio="none" 
-            class="absolute bottom-0 h-16 w-full"
-            fill="currentColor"
-            style="color: #5755ff;"
-        >
-            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V0C0,0,0,0,0,0z"></path>
-        </svg>
-    </div>
-
+<footer id="contact" class="fixed -z-50 mt-32 bg-primary pt-16 pb-8 text-white">
     <div class="mx-auto max-w-3xl px-5">
         <!-- Social links -->
         <div class="mb-8 flex flex-wrap gap-4">

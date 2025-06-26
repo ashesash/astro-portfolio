@@ -7,11 +7,18 @@ type Props = AboutProps & Pick<HeroProps, "name">;
 
 // const { description, image, name } = Astro.props;
 const { description } = Astro.props;
+const paragraphs = description.split('\n\n').filter(p => p.trim());
 ---
 
 <Section text="About Me" href="about">
     <div class="flex flex-col items-center gap-12 md:flex-row md:gap-8">
-        <p class="w-auto text-base text-neutral md:pr-5">{description}</p>
+        <div class="w-auto space-y-4 text-base text-neutral md:pr-5">
+            {
+                paragraphs.map((paragraph) => (
+                    <p>{paragraph.trim()}</p>
+                ))
+            }
+        </div>
         <!-- <div
             class="h-80 w-64 flex-shrink-0 rotate-[5deg] bg-white p-4 md:rotate-[7deg]"
         >
