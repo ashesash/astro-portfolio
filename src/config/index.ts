@@ -24,7 +24,7 @@ export const SITE_CONTENT: SiteContent = {
         name: "Ash Sahu",
         specialty: "Software Engineer",
         summary:
-            "Engineer based in Sydney, with an interest in Data and Cloud development",
+            "Engineer based in Gadigal land (Sydney), with an interest in Data and Cloud development",
         email: "hiashsahu@gmail.com",
     },
     projects: [
@@ -65,8 +65,5 @@ I've lived in a few different places before settling in Sydney—India, Bahrain,
 Currently, I'm a Full Stack Developer at Meydit, where I work on everything from revamping the frontend and improving backend notifications to integrating machine learning into new products.
 
 When I'm not coding, I'm likely modding mechanical keyboards, playing guitar, sketching, whittling or getting creative with polymer clay. I also love building small coding projects in my spare time, so if you're interested in collaborating or building something cool together, feel free to reach out!`,
-        // image: "/ash-big.jpg",
     },
 };
-
-// #5755ff
