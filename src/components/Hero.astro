@@ -20,7 +20,7 @@ const { name, specialty, summary, email } = Astro.props;
     <p class="mb-16 text-base font-normal text-neutral md:text-lg">
         {summary}
     </p>
-    <div class="inline-block rounded-full bg-[length:200%] hover:[animation:_gradient-move_3s_infinite_linear_reverse] px-1 py-1 text-sm leading-5 font-medium text-[#fff]">
+    <div class="inline-block rounded-full bg-[length:200%] hover:[animation:_gradient-move_3s_infinite_linear_reverse] hover:from-amber-500 to-green-300 px-1 py-1 text-sm leading-5 font-medium text-[#fff]">
         <a
             class="inline-block rounded-full bg-black px-8 py-4"
             href={`mailto:${email}`}>Get in Touch</a

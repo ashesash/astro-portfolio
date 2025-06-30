@@ -5,7 +5,7 @@ type Props = HeaderProps;
 const { siteLogo, navLinks } = Astro.props;
 ---
 
-<header class="fixed left-0 top-0 z-40 w-full">
+<header class="fixed left-0 top-0 z-40">
   <!-- Mobile navbar -->
   <nav class="md:hidden">
     <div class="flex items-center justify-end px-5 py-4">
@@ -27,7 +27,7 @@ const { siteLogo, navLinks } = Astro.props;
     </div>
     <div 
       id="mobile-menu" 
-      class="fixed inset-0 z-50 hidden bg-black bg-opacity-95 flex flex-col items-center justify-center"
+      class="fixed inset-0 z-50 bg-black bg-opacity-95 flex flex-col items-center justify-center"
     >
       <button 
         id="close-menu" 
@@ -56,7 +56,7 @@ const { siteLogo, navLinks } = Astro.props;
   
   <!-- Desktop navbar -->
   <!-- <nav class="fixed left-0 top-0 hidden h-full w-20 flex-col items-center justify-between rounded-r-3xl bg-gray-900/50 shadow-2xl shadow-gray-300/10 shadow-r py-8 md:flex"> -->
-  <nav class="fixed left-0 top-0 hidden h-full w-20 flex-col items-center justify-between py-20 md:flex">
+  <nav class="fixed z-50 left-0 top-0 hidden h-full w-20 flex-col items-center justify-between py-20 md:flex">
     <a href="/" class="flex items-center">
       <svg width="40" height="40" viewBox="0 0 640 640" class="text-white fill-current">
         <path d="m224 471.85c0-0.91342 3.1634-2.1984 9.25-3.7572 25.469-6.523 56.718-18.236 84.25-31.578l17-8.2385 54.94-0.6595c30.217-0.36273 55.129-0.84862 55.36-1.0798 0.36852-0.36852-36.971-62.79-38.771-64.816-0.38307-0.43096-6.5089 4.6297-13.613 11.246-28.761 26.786-67.55 49.823-115.42 68.547-35.622 13.934-74.308 23.162-116 27.671-12.699 1.3734-67.79 1.7572-75.083 0.52318-7.8461-1.3275-5.6851-3.1814 5.8762-5.0411 15.237-2.4509 40.536-8.0235 57.72-12.714 74.901-20.444 140.83-52.9 192.49-94.766 20.867-16.911 50.788-49.201 63.395-68.414 1.7077-2.6026 3.6136-4.7401 4.2354-4.75 0.62175-0.01 13.053 19.67 27.626 43.732 14.572 24.062 34.269 56.575 43.769 72.25s22.654 37.39 29.229 48.257c7.0251 11.61 11.718 20.372 11.381 21.25-0.49718 1.2956-7.0317 1.4974-49.354 1.5244-26.83 0.0171-53.956 0.21346-60.281 0.43639s-51.212 0.71162-99.75 1.086c-74.945 0.57803-88.25 0.47136-88.25-0.70752z" fill="#ffffff"/>

@@ -8,8 +8,8 @@ const { description } = Astro.props;
 const paragraphs = description.split("\n\n").filter((p) => p.trim());
 ---
 
-<Section text="About Me" href="about" class="h-screen">
-    <div class="z-10 flex flex-col items-center gap-12 md:flex-row md:gap-8">
+<Section text="About Me" href="about" class="min-h-screen" id="about">
+    <div class="flex flex-col items-center gap-12 md:flex-row md:gap-8">
         <div
             id="about-content"
             class="w-auto space-y-4 text-base text-neutral md:pr-5"
