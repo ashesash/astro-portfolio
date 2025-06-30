@@ -49,50 +49,37 @@ const ogImgUrl = canonicalURL + socialImage;
 
 	<body class="font-sans">
 		<Navbar siteLogo={siteLogo} navLinks={navLinks} />
-
-		<!-- Contact section (background - fixed) -->
 		<div
 			class="fixed top-0 left-0 w-full bg-primary z-10 flex items-center justify-center"
 		>
 			<Contact author={author} socialLinks={socialLinks} />
 		</div>
 
-		<!-- Main sections (foreground - moves up on scroll) -->
 		<div
 			id="mainSections"
 			class="relative z-20 bg-gradient-to-b from-black to-blue-900 rounded-b-4xl"
 		>
-			<main class="mx-auto max-w-4xl pl-20">
+			<main class="mx-auto max-w-4xl md:pl-20 p-10">
 				<slot />
 			</main>
 		</div>
 	</body>
 
-<script>
-	const mainSections = document.getElementById("mainSections");
+	<script>
+		window.addEventListener("scroll", () => {
+			const scrolled = window.pageYOffset;
+			const maxScroll = document.body.scrollHeight - window.innerHeight;
+			const scrollPercent = scrolled / maxScroll;
 
-	window.addEventListener("scroll", () => {
-		const aboutSection = document.getElementById("about");
-
-		if (aboutSection) {
-			const aboutRect = aboutSection.getBoundingClientRect();
-			const windowHeight = window.innerHeight;
-
-			// Start transition when about section reaches middle of screen
-			if (aboutRect.top < windowHeight * 0.5) {
-				const progress = Math.max(0, Math.min(1, 
-					(windowHeight * 1 - aboutRect.top) / (windowHeight * 2)
-				));
-
+			if (scrollPercent > 0.8) {
+				const progress = (scrollPercent - 0.8) / 0.2;
 				const translateY = progress * -100;
-				mainSections.style.transform = `translateY(${translateY}vh)`;
+				document.getElementById("mainSections").style.transform =
+					`translateY(${translateY}vh)`;
 			} else {
-				mainSections.style.transform = `translateY(0vh)`;
+				document.getElementById("mainSections").style.transform =
+					"translateY(0)";
 			}
-		}
-	});
-</script>
-
-
-
+		});
+	</script>
 </html>

@@ -14,36 +14,40 @@ const year = new Date().getFullYear();
 
 <section
     id="contact"
-    class="w-full h-screen flex flex-col bg-sky-800 items-center justify-center text-white"
+    class="w-full h-screen flex flex-col bg-sky-700 items-center justify-center text-white gap-6 space-between"
 >
-    <div class="flex-1 mx-auto max-w-5xl pl-10 flex items-center">
-        <div class="flex flex-row bg-indigo-900 rounded-4xl py-22 my-12 w-full">
-            <div class="flex flex-col justify-center w-1/2 ml-10">
-                <h2 class="mb-6 text-4xl font-bold">Get In Touch</h2>
-                <p class="text-lg">
-                    Hi there! If you would like to collaborate please <a
-                        href={`mailto:${email}`}
-                        class="text-amber-600 hover:text-white/80"
-                    >
-                        drop me an email</a
-                    > or connect with me on LinkedIn.
-                </p>
-            </div>
-            <div class="w-1/2 flex items-center justify-center">
-                <Image
-                    src="/src/assets/contact.svg"
-                    alt="Contact Illustration"
-                    width={300}
-                    height={300}
-                    class="max-w-full h-auto"
-                />
-            </div>
+    <div
+        class="w-3/4 flex flex-col-reverse md:flex-row bg-blue-950 rounded-4xl p-10 md:p-20 shadow-2xl/30"
+    >
+        <div class="flex flex-col flex-1 justify-center">
+            <h2 class="mb-6 text-4xl font-bold max-sm:text-center">Get In Touch</h2>
+            <p class="text-lg max-sm:text-center">
+                Hi there! If you would like to collaborate please <a
+                    href={`mailto:${email}`}
+                    class="text-amber-600 hover:text-white/80"
+                >
+                    drop me an email</a
+                > or connect with me on
+                <a
+                    href={`https://linkedin.com/in/ashsahu`}
+                    class="text-amber-600 hover:text-white/80">LinkedIn.</a
+                >
+            </p>
+        </div>
+        <div class="flex items-center justify-center">
+            <Image
+                src="/contact.svg"
+                alt="Contact Illustration"
+                width={300}
+                height={300}
+                class="max-w-full h-auto"
+            />
         </div>
     </div>
-    <div class="pb-5 text-center text-xs text-white/70">
+    <footer class="absolute bottom-2 flex end text-center text-[10px] text-white/70">
         <p>
             &copy; {year}
-            {author}. All rights reserved. Built with Astro and Tailwind CSS
+            {author}. Built with Astro and Tailwind CSS
         </p>
-    </div>
+    </footer>
 </section>

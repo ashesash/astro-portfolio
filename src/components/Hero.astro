@@ -6,7 +6,7 @@ type Props = HeroProps;
 const { name, specialty, summary, email } = Astro.props;
 ---
 
-<Section class="h-screen py-24 md:py-56" id="hero">
+<Section class="flex flex-col h-screen justify-center" id="hero">
     <h1
         class="mb-1.5 font-serif text-7xl font-bold tracking-tightest text-white sm:text-8xl md:mb-0 md:text-9xl"
     >
@@ -17,13 +17,13 @@ const { name, specialty, summary, email } = Astro.props;
     >
         {specialty}
     </p>
-    <p class="mb-16 text-base font-normal text-neutral md:text-lg">
+    <p class="mb-10 text-base font-normal text-neutral md:text-lg">
         {summary}
     </p>
-    <div class="inline-block rounded-full bg-[length:200%] hover:[animation:_gradient-move_3s_infinite_linear_reverse] hover:from-amber-500 to-green-300 px-1 py-1 text-sm leading-5 font-medium text-[#fff]">
+    <button class="w-fit rounded-full bg-gradient-to-r from-blue-950 via-primary to-blue-950 bg-[length:200%] animate-[_gradient-move_3s_infinite_linear] px-0.5 py-0.5 text-sm font-medium text-[#fff]">
         <a
             class="inline-block rounded-full bg-black px-8 py-4"
             href={`mailto:${email}`}>Get in Touch</a
         >
-    </div>
+    </button>
 </Section>

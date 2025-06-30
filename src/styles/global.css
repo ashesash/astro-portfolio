@@ -52,3 +52,8 @@
     }
   }
 }
+
+    @keyframes gradient-move {
+        0% { background-position: 0% 200%; }
+        100% { background-position: 200% 100%; }
+    }

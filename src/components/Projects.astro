@@ -16,8 +16,11 @@ const { projects } = Astro.props;
             ({ name, summary, image, linkPreview, linkSource }, index) => {
                 return (
                     <div
-                        style={{ top: `calc(3vh + ${index * 4}vh)` }}
-                        class="sticky mb-12 rounded-2xl border border-neutral/20 bg-black"
+                        style={{
+                            "--mobile-top": `calc(10vh + ${index * 4}vh)`,
+                            "--desktop-top": `calc(3vh + ${index * 4}vh)`,
+                        }}
+                        class="sticky mb-12 rounded-2xl border border-neutral/20 bg-black top-[var(--mobile-top)] md:top-[var(--desktop-top)]"
                     >
                         <div class="bg-difu relative z-[1] grid h-[580px] w-full grid-rows-2 rounded-2xl bg-[#1c232d]/85 before:absolute before:inset-0 before:z-[-1] before:rounded-2xl before:bg-[url(/raja.png)] before:bg-[length:128px] before:bg-repeat before:opacity-[5%] before:content-[''] sm:grid-cols-2 sm:grid-rows-1 md:h-96">
                             <div class="px-6 pt-12">
