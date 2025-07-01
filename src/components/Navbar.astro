@@ -288,16 +288,62 @@ const { siteLogo, navLinks } = Astro.props;
   </div>
 </nav>
 
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Configuration for each navigation section
+    const navSections = [
+      {
+        selector: 'a[href="#projects"]',
+        targetId: "projects",
+        scrollBehavior: "element",
+      },
+      {
+        selector: 'a[href="#about"]',
+        targetId: "about-content",
+        scrollBehavior: "element",
+      },
+      {
+        selector: 'a[href="#contact"]',
+        targetId: "contact",
+        scrollBehavior: "bottom",
+      },
+    ];
+
+    // Handle scroll behavior for each section
+    navSections.forEach(({ selector, targetId, scrollBehavior }) => {
+      const links = document.querySelectorAll(selector);
+
+      links.forEach((link) => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+
+          if (scrollBehavior === "bottom") {
+            window.scrollTo({
+              top: document.body.scrollHeight,
+              behavior: "smooth",
+            });
+          } else {
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+              targetSection.scrollIntoView({
+                behavior: "smooth",
+                block: "end",
+              });
+            }
+          }
+        });
+      });
+    });
+  });
+</script>
+
+<!-- dark mode and mobile menu toggle script -->
 <script is:inline>
   document.addEventListener("DOMContentLoaded", () => {
     const menuToggle = document.getElementById("menu-toggle");
     const closeMenu = document.getElementById("close-menu");
     const mobileMenu = document.getElementById("mobile-menu");
-    const themeToggles = document.querySelectorAll("#theme-toggle");
-    const sunIcons = document.querySelectorAll("#sun-icon");
-    const moonIcons = document.querySelectorAll("#moon-icon");
 
-    // Mobile menu handlers
     menuToggle?.addEventListener("click", () => {
       mobileMenu?.classList.remove("hidden");
       document.body.style.overflow = "hidden";
@@ -308,40 +354,32 @@ const { siteLogo, navLinks } = Astro.props;
       document.body.style.overflow = "";
     });
 
-    // Check system preference
+    const themeToggles = document.querySelectorAll("#theme-toggle");
+    const sunIcons = document.querySelectorAll("#sun-icon");
+    const moonIcons = document.querySelectorAll("#moon-icon");
+
     const prefersDark = window.matchMedia(
       "(prefers-color-scheme: dark)",
     ).matches;
     const currentTheme =
       localStorage.getItem("theme") || (prefersDark ? "dark" : "light");
 
-    // Set initial theme
-    if (currentTheme === "dark") {
-      document.documentElement.classList.add("dark");
-      sunIcons.forEach((icon) => icon.classList.remove("hidden"));
-      moonIcons.forEach((icon) => icon.classList.add("hidden"));
-    } else {
-      document.documentElement.classList.remove("dark");
-      sunIcons.forEach((icon) => icon.classList.add("hidden"));
-      moonIcons.forEach((icon) => icon.classList.remove("hidden"));
+    function updateTheme(theme) {
+      const isDark = theme === "dark";
+
+      document.documentElement.classList.toggle("dark", isDark);
+      localStorage.setItem("theme", theme);
+
+      sunIcons.forEach((icon) => icon.classList.toggle("hidden", !isDark));
+      moonIcons.forEach((icon) => icon.classList.toggle("hidden", isDark));
     }
 
-    // Add click handlers
+    updateTheme(currentTheme);
+
     themeToggles.forEach((toggle) => {
       toggle.addEventListener("click", () => {
         const isDark = document.documentElement.classList.contains("dark");
-
-        if (isDark) {
-          document.documentElement.classList.remove("dark");
-          localStorage.setItem("theme", "light");
-          sunIcons.forEach((icon) => icon.classList.add("hidden"));
-          moonIcons.forEach((icon) => icon.classList.remove("hidden"));
-        } else {
-          document.documentElement.classList.add("dark");
-          localStorage.setItem("theme", "dark");
-          sunIcons.forEach((icon) => icon.classList.remove("hidden"));
-          moonIcons.forEach((icon) => icon.classList.add("hidden"));
-        }
+        updateTheme(isDark ? "light" : "dark");
       });
     });
   });
