@@ -13,16 +13,16 @@ const { name, specialty, summary, email } = Astro.props;
         {name}
     </h1>
     <p
-        class="mb-9 font-serif text-4xl leading-[46px] font-bold tracking-tighter text-primary sm:text-5xl md:text-6xl"
+        class="mb-9 font-serif text-4xl leading-[46px] font-bold tracking-tighter text-primary-light dark:text-primary sm:text-5xl md:text-6xl"
     >
         {specialty}
     </p>
-    <p class="mb-10 text-base font-normal text-neutral md:text-lg">
+    <p class="mb-10 text-base font-normal text-neutral-light dark:text-neutral md:text-lg">
         {summary}
     </p>
-    <button class="w-fit rounded-full bg-gradient-to-r from-blue-950 via-primary to-blue-950 bg-[length:200%] animate-[_gradient-move_3s_infinite_linear] px-0.5 py-0.5 text-sm font-medium text-[#fff]">
+    <button class="w-fit rounded-full bg-gradient-to-r dark:from-blue-950 dark:via-primary dark:to-blue-950 from-blue-300 via-primary to-blue-300 bg-[length:200%] animate-[_gradient-move_3s_infinite_linear] px-0.5 py-0.5 text-sm font-medium dark:text-white text-black">
         <a
-            class="inline-block rounded-full bg-black px-8 py-4"
+            class="inline-block rounded-full bg-white dark:bg-black px-8 py-4"
             href={`mailto:${email}`}>Get in Touch</a
         >
     </button>

@@ -54,14 +54,14 @@ const ogImgUrl = canonicalURL + socialImage;
 		<Navbar siteLogo={siteLogo} navLinks={navLinks} />
 		<Freelance />
 		<div
-			class="fixed top-0 left-0 w-full bg-primary z-10 flex items-center justify-center"
+			class="fixed top-0 left-0 w-full dark:bg-primary bg-primary-light z-10 flex items-center justify-center"
 		>
 			<Contact author={author} socialLinks={socialLinks} />
 		</div>
 
 		<div
 			id="mainSections"
-			class="relative z-20 bg-gradient-to-b from-black to-blue-900 rounded-b-4xl"
+			class="relative z-20 bg-gradient-to-b dark:from-black dark:to-blue-950 from-[#99ddff] to-sky-600 rounded-b-4xl"
 		>
 			<main class="mx-auto max-w-4xl md:pl-20 p-10">
 				<slot />
@@ -86,6 +86,7 @@ const ogImgUrl = canonicalURL + socialImage;
 			}
 		});
 	</script>
+
 	<noscript>
 		<link
 			href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Gabarito:wght@400..900&display=swap"

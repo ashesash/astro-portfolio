@@ -12,7 +12,7 @@ const paragraphs = description.split("\n\n").filter((p) => p.trim());
     <div class="flex flex-col items-center gap-12 md:flex-row md:gap-8">
         <div
             id="about-content"
-            class="w-auto space-y-4 text-base text-neutral md:pr-5 text-justify"
+            class="w-auto space-y-4 text-base dark:text-neutral text-neutral-light md:pr-5 text-justify"
         >
             {paragraphs.map((paragraph) => <p>{paragraph.trim()}</p>)}
         </div>
