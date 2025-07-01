@@ -64,4 +64,4 @@ I've lived in a few different places before settling in Sydney—India, Bahrain,
 
 When I'm not coding, I'm likely modding mechanical keyboards, playing guitar, sketching, whittling or getting creative with polymer clay. I also love building small coding projects in my spare time, so if you're interested in collaborating or building something cool together, feel free to reach out!`,
     },
-};
+}

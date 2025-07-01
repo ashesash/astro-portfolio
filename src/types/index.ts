@@ -13,6 +13,7 @@ export interface SiteContent {
     // experience: ExperienceProps[];
     projects: ProjectProps[];
     about: AboutProps;
+    freelance: FreelanceProps;
 }
 
 export interface HeroProps {
@@ -45,4 +46,8 @@ export interface AboutProps {
 export interface HeaderProps {
     siteLogo: string;
     navLinks: { text: string; href: string }[];
+}
+
+export interface FreelanceProps {
+    description: string;
 }

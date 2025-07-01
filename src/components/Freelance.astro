@@ -1,0 +1,32 @@
+---
+
+---
+
+<div
+    id="freelance-bar"
+    class="fixed top-100 -right-16 md:-right-22 flex w-fit z-40 bg-transparent px-4 md:py-1 rounded-full shadow-lg rotate-90 opacity-0 transition-opacity duration-500 ease-in"
+>
+    <p class="text-[10px] md:text-xs text-white md:font-bold">🟢 Available for freelance</p>
+    <!-- <p class="text-[10px] md:text-xs text-white md:font-bold">🔴 Unavailalable for freelance</p> -->
+</div>
+
+<script>
+    const freelanceBar = document.getElementById("freelance-bar");
+    const heroSection = document.getElementById("hero");
+
+    function handleAppear() {
+        if (!freelanceBar || !heroSection) return;
+
+        const heroRect = heroSection.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+
+        if (heroRect.bottom < windowHeight * 0.2) {
+            freelanceBar.style.opacity = "1";
+        } else {
+            freelanceBar.style.opacity = "0";
+        }
+    }
+
+    window.addEventListener("scroll", handleAppear);
+    handleAppear();
+</script>

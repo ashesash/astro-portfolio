@@ -10,7 +10,7 @@ interface Props {
 const { projects } = Astro.props;
 ---
 
-<Section text="Featured Projects" href="projects">
+<Section text="Featured Projects" href="projects" id="projects">
     {
         projects.map(
             ({ name, summary, image, linkPreview, linkSource }, index) => {
@@ -22,7 +22,7 @@ const { projects } = Astro.props;
                         }}
                         class="sticky mb-12 rounded-2xl border border-neutral/20 bg-black top-[var(--mobile-top)] md:top-[var(--desktop-top)]"
                     >
-                        <div class="bg-difu relative z-[1] grid h-[580px] w-full grid-rows-2 rounded-2xl bg-[#1c232d]/85 before:absolute before:inset-0 before:z-[-1] before:rounded-2xl before:bg-[url(/raja.png)] before:bg-[length:128px] before:bg-repeat before:opacity-[5%] before:content-[''] sm:grid-cols-2 sm:grid-rows-1 md:h-96">
+                        <div class="relative z-[1] grid h-[580px] w-full grid-rows-2 rounded-2xl bg-[#1c232d]/85 before:absolute before:inset-0 before:z-[-1] before:rounded-2xl before:bg-[url(/raja.png)] before:bg-[length:128px] before:bg-repeat before:opacity-[5%] before:content-[''] sm:grid-cols-2 sm:grid-rows-1 md:h-96">
                             <div class="px-6 pt-12">
                                 <h3 class="mb-5 font-serif text-3xl font-medium text-primary">
                                     {name}
@@ -33,6 +33,7 @@ const { projects } = Astro.props;
                                         href={linkSource}
                                         target="_blank"
                                         class="flex items-center gap-1 hover:underline"
+                                        rel="noopener noreferrer"
                                     >
                                         Source
                                         <svg
@@ -52,6 +53,7 @@ const { projects } = Astro.props;
                                         href={linkPreview}
                                         target="_blank"
                                         class="flex items-center gap-1 hover:underline"
+                                        rel="noopener noreferrer"
                                     >
                                         Preview
                                         <svg
